@@ -1,35 +1,51 @@
 // --- DOM Elements ---
-const quoteTextElement = document.getElementById('quote-text');
-const quoteAuthorElement = document.getElementById('quote-author');
-const newQuoteButton = document.getElementById('new-quote-btn');
+const quoteTextElement = document.getElementById("quote-text");
+const quoteAuthorElement = document.getElementById("quote-author");
+const newQuoteButton = document.getElementById("new-quote-btn");
 
 // --- Quotes Data ---
 const quotes = [
-    { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
-    { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
-    { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
-    { text: "If life were predictable it would cease to be life, and be without flavor.", author: "Eleanor Roosevelt" },
-    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" }
+  {
+    text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    author: "Nelson Mandela",
+  },
+  {
+    text: "The way to get started is to quit talking and begin doing.",
+    author: "Walt Disney",
+  },
+  {
+    text: "Your time is limited, so don't waste it living someone else's life.",
+    author: "Elon Musk",
+  },
+  {
+    text: "If life were predictable it would cease to be life, and be without flavor.",
+    author: "Eleanor Roosevelt",
+  },
+  {
+    text: "Life is what happens when you're busy making other plans.",
+    author: "John Lennon",
+  },
 ];
 
 // --- Functions ---
 function getRandomQuote() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
 }
-
+//Some changes
 function displayQuote() {
-    const quote = getRandomQuote();
-    quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
-    quoteAuthorElement.textContent = `- ${quote.author}`;
+  const quote = getRandomQuote();
+  quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
+  quoteAuthorElement.textContent = `- ${quote.author}`;
 }
-
+//Good logic
 // --- Event Listeners ---
 // Display a random quote when the button is clicked
-if (newQuoteButton) { // Check if button exists before adding listener
-    newQuoteButton.addEventListener('click', displayQuote);
+if (newQuoteButton) {
+  // Check if button exists before adding listener
+  newQuoteButton.addEventListener("click", displayQuote);
 } else {
-    console.error("Button with ID 'new-quote-btn' not found.");
+  console.error("Button with ID 'new-quote-btn' not found.");
 }
 
 // --- Initial Load ---
